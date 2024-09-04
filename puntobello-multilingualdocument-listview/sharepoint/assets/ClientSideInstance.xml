@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="LanguageConnection"
+        Location="ClientSideExtension.ListViewCommandSet"
+        ListTemplateId="100"
+        Properties="{}"
+        ComponentId="84e57299-627a-434d-80b0-8e36c5595ec3" />
+</Elements>

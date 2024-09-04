@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <CustomAction
+        Title="LanguageConnection"
+        RegistrationId="101"
+        RegistrationType="List"
+        Location="ClientSideExtension.ListViewCommandSet"
+        ClientSideComponentId="84e57299-627a-434d-80b0-8e36c5595ec3"
+        ClientSideComponentProperties="{}">
+    </CustomAction>
+</Elements>

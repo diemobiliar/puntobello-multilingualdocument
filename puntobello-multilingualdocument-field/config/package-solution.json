@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "puntobello-multilingualdocument-field",
+    "id": "173fbd57-3306-48da-ac0a-a3703bd5dd1a",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Nello D'Andrea - Die Mobiliar",
+      "websiteUrl": "https://github.com/diemobiliar",
+      "privacyUrl": "https://github.com/diemobiliar",
+      "termsOfUseUrl": "https://github.com/diemobiliar",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "Field customizer to display the language-linked documents"
+      },
+      "longDescription": {
+        "default": "Field customizer to display the language-linked documents"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/puntobello-multilingualdocument-field.sppkg"
+  }
+}

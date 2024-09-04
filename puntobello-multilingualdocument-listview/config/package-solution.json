@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "puntobello-multilingualdocument-listview",
+    "id": "0ae581c4-6765-4fb6-a9b6-2f2c49e06d09",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "Nello D'Andrea - Die Mobiliar",
+      "websiteUrl": "https://github.com/diemobiliar",
+      "privacyUrl": "https://github.com/diemobiliar",
+      "termsOfUseUrl": "https://github.com/diemobiliar",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "features": [
+      {
+        "title": "Application Extension - Document language connection - Listview command set.",
+        "description": "Deploys a custom action on document libraries to connect similar documents by language ",
+        "id": "135bc1af-2bab-4cc6-a052-003fc5dc6ef7",
+        "version": "1.0.0.0",
+        "assets": {
+          "elementManifests": [
+            "elements.xml",
+            "ClientSideInstance.xml"
+          ]
+        }
+      }
+    ],
+    "metadata": {
+      "shortDescription": {
+        "default": "List view extension for handling multilingual documents"
+      },
+      "longDescription": {
+        "default": "List view extension for handling multilingual documents"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    }
+  },
+  "paths": {
+    "zippedPackage": "solution/puntobello-multilingualdocument-listview.sppkg"
+  }
+}

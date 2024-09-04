@@ -1,0 +1,55 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.LanguageDoc {
+  font-family: var(--spfx_font_family) !important;
+
+  .cell {
+    display: "inline-block";
+    width: 100%;
+    font-size: var(--spfx_font_size_generic);
+  }
+
+  .loader {
+    margin: 0px auto;
+    display: inline-flex;
+    position: absolute;
+    left: 40px;
+    font-size: var(--spfx_font_size_generic);
+  }
+
+  .totalDiv {
+    margin-bottom: 8px;
+    font-size: var(--spfx_font_size_title);
+  }
+
+  .link {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: var(--spfx_color_primary);
+    text-decoration: underline;
+    font-size: var(--spfx_font_size_generic);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--spfx_color_primary);
+      text-decoration: underline; 
+      filter: brightness(var(--spfx_color_primary_brightness_dark));
+    }
+  }
+  .spinner {
+    margin: 0 auto;
+    display: inline-flex;
+    position: absolute;
+    left: 40px;
+  }
+
+  .noDocContainer {
+    display: flex;
+    align-items: center; 
+  }
+
+  .noDoc {
+    font-size: var(--spfx_font_size_title) !important;
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "templates": [
+        {
+            "templateName": "SharedDocuments.xml",
+            "targets": ["pb_home","pb_content"],
+            "relativePath": "./spo/assets/lists",
+            "sortOrder": 100
+        }
+    ]
+}

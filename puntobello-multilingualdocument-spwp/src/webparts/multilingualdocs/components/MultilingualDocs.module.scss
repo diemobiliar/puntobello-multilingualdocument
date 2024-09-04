@@ -1,0 +1,7 @@
+@import '~@fluentui/react/dist/sass/References.scss';
+
+.multilingualdocs {
+  body, p, h1, h2, h3, h4, h5, h6, li, a, span, div {
+    font-family: var(--spfx_font_family) !important;
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "language-doc-field-customizer": {
+      "components": [
+        {
+          "entrypoint": "./lib/extensions/languageDoc/LanguageDocFieldCustomizer.js",
+          "manifest": "./src/extensions/languageDoc/LanguageDocFieldCustomizer.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "LanguageDocFieldCustomizerStrings": "lib/extensions/languageDoc/loc/{locale}.js"
+  }
+}

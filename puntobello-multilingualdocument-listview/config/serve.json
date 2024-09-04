@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/spfx-serve.schema.json",
+  "port": 4321,
+  "https": true,
+    "serveConfigurations": {
+    "default": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/Shared%20Documents",
+      "customActions": {
+        "56e08a67-0133-4dfe-9227-2c78eeab68c8": {
+          "location": "ClientSideExtension.ListViewCommandSet",
+          "properties": {
+          }
+        }
+      }
+    },
+    "languageConnection": {
+      "pageUrl": "https://yourtenant.sharepoint.com/sites/yoursite/Shared%20Documents",
+      "customActions": {
+        "56e08a67-0133-4dfe-9227-2c78eeab68c8": {
+          "location": "ClientSideExtension.ListViewCommandSet",
+          "properties": {
+          }
+        }
+      }
+    }
+  }
+}

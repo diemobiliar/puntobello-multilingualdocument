@@ -1,0 +1,16 @@
+{
+    "solutions": [
+        {
+            "solutionName": "puntobello-multilingualdocument-field",
+            "targets": ["pb_home","pb_content"]
+        },
+        {
+            "solutionName": "puntobello-multilingualdocument-listview",
+            "targets": ["pb_home","pb_content"]
+        },
+        {
+            "solutionName": "puntobello-multilingualdocument-spwp",
+            "targets": ["pb_home","pb_content"]
+        }
+    ]
+}

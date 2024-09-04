@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2022/09/ProvisioningSchema">
+  <pnp:Preferences Generator="PnP.Framework, Version=1.17.15.0, Culture=neutral, PublicKeyToken=0d501f89f11b748c" />
+  <pnp:Templates ID="CONTAINER-TEMPLATE-100C0E6BAE5148BBAB2C329BCE88A12E">
+    <pnp:ProvisioningTemplate ID="TEMPLATE-100C0E6BAE5148BBAB2C329BCE88A12E" Version="1" BaseSiteTemplate="SITEPAGEPUBLISHING#0" Scope="RootSite">
+      <pnp:Lists>
+        <pnp:ListInstance Title="Documents" Description="" DocumentTemplate="{site}/Shared Documents/Forms/template.dotx" OnQuickLaunch="true" TemplateType="101" Url="Shared Documents" EnableVersioning="true" MinorVersionLimit="0" MaxVersionLimit="500" DraftVersionVisibility="0" TemplateFeatureID="00bfea71-e717-4e80-aa17-d0c71b360101" EnableAttachments="false" DefaultDisplayFormUrl="{site}/Shared Documents/Forms/DispForm.aspx" DefaultEditFormUrl="{site}/Shared Documents/Forms/EditForm.aspx" DefaultNewFormUrl="{site}/Shared Documents/Forms/Upload.aspx" ImageUrl="/_layouts/15/images/itdl.png?rev=47" IrmExpire="false" IrmReject="false" IsApplicationList="false" ValidationFormula="" ValidationMessage="">
+          <pnp:ContentTypeBindings>
+            <pnp:ContentTypeBinding ContentTypeID="0x0101" Default="true" />
+            <pnp:ContentTypeBinding ContentTypeID="0x0120" />
+          </pnp:ContentTypeBindings>
+          <pnp:Views RemoveExistingViews="true">
+            <View Name="{02294B32-2DF5-4693-A435-2BE1EB51AFC0}" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" Type="HTML" DisplayName="All Documents" Url="{site}/Shared Documents/Forms/AllItems.aspx" Level="1" BaseViewID="1" ContentTypeID="0x" ImageUrl="/_layouts/15/images/dlicon.png?rev=47">
+              <Query>
+                <OrderBy>
+                  <FieldRef Name="FileLeafRef" />
+                </OrderBy>
+              </Query>
+              <ViewFields>
+                <FieldRef Name="DocIcon" />
+                <FieldRef Name="Title" />
+                <FieldRef Name="LinkFilename" />
+                <FieldRef Name="Modified" />
+                <FieldRef Name="Editor" />
+                <FieldRef Name="pb_LangCd" />
+                <FieldRef Name="pb_LangConn" />
+              </ViewFields>
+              <RowLimit Paged="TRUE">30</RowLimit>
+              <JSLink>clienttemplates.js</JSLink>
+            </View>
+          </pnp:Views>
+          <pnp:Fields>
+            <Field Type="Choice" Name="pb_LangCd" DisplayName="Language" ID="{75aad2ff-575b-41a0-84d9-d50c3fe4f956}" Group="PuntoBello" Required="FALSE" SourceID="{{listid:Documents}}" StaticName="pb_LangCd" ColName="nvarchar17" RowOrdinal="0" Version="1">
+              <CHOICES>
+                <CHOICE>en-US</CHOICE>
+                <CHOICE>zh-CN</CHOICE>
+                <CHOICE>es-ES</CHOICE>
+                <CHOICE>ar-SA</CHOICE>
+                <CHOICE>ru-RU</CHOICE>
+                <CHOICE>de-DE</CHOICE>
+                <CHOICE>fr-FR</CHOICE>
+                <CHOICE>ja-JP</CHOICE>
+                <CHOICE>pt-BR</CHOICE>
+                <CHOICE>hi-IN</CHOICE>
+                <CHOICE>it-IT</CHOICE>
+                <CHOICE>ko-KR</CHOICE>
+                <CHOICE>nl-NL</CHOICE>
+                <CHOICE>pl-PL</CHOICE>
+                <CHOICE>tr-TR</CHOICE>
+                <CHOICE>sv-SE</CHOICE>
+                <CHOICE>da-DK</CHOICE>
+                <CHOICE>fi-FI</CHOICE>
+                <CHOICE>nb-NO</CHOICE>
+                <CHOICE>cs-CZ</CHOICE>
+                <CHOICE>hu-HU</CHOICE>
+                <CHOICE>el-GR</CHOICE>
+                <CHOICE>bg-BG</CHOICE>
+                <CHOICE>ro-RO</CHOICE>
+                <CHOICE>sk-SK</CHOICE>
+                <CHOICE>sl-SI</CHOICE>
+                <CHOICE>hr-HR</CHOICE>
+                <CHOICE>lt-LT</CHOICE>
+                <CHOICE>lv-LV</CHOICE>
+                <CHOICE>et-EE</CHOICE>
+                <CHOICE>mt-MT</CHOICE>
+                <CHOICE>en-AU</CHOICE>
+                <CHOICE>fr-CA</CHOICE>
+                <CHOICE>pt-PT</CHOICE>
+                <CHOICE>af-ZA</CHOICE>
+              </CHOICES>
+            </Field>
+            <Field Type="Text" Name="pb_LangConn" DisplayName="Language connection" ID="{ac49e643-3cb3-48b2-88d5-d895e0d7c53b}" Group="PuntoBello" Required="FALSE" SourceID="{{listid:Documents}}" StaticName="pb_LangConn" ColName="nvarchar18" RowOrdinal="0" ClientSideComponentId="704835cc-32d6-4b3c-b6bb-95367290bbf6" Version="1" />
+          </pnp:Fields>
+          <pnp:FieldRefs>
+            <pnp:FieldRef ID="76d13cd2-1bae-45a5-8b74-545b87b65037" Name="_ColorTag" DisplayName="Color Tag" />
+            <pnp:FieldRef ID="fa564e0f-0c70-4ab9-b863-0177e6ddd247" Name="Title" DisplayName="Title" />
+            <pnp:FieldRef ID="cb19284a-cde7-4570-a980-1dab8bd74470" Name="_ExtendedDescription" DisplayName="Description" />
+            <pnp:FieldRef ID="d307dff3-340f-44a2-9f4b-fbfe1ba07459" Name="_CommentCount" DisplayName="Comment count" />
+            <pnp:FieldRef ID="db8d9d6d-dc9a-4fbd-85f3-4a753bfdc58c" Name="_LikeCount" DisplayName="Like count" />
+          </pnp:FieldRefs>
+        </pnp:ListInstance>
+      </pnp:Lists>
+    </pnp:ProvisioningTemplate>
+  </pnp:Templates>
+</pnp:Provisioning>
