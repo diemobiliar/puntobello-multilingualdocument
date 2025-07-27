@@ -13,6 +13,6 @@
       "@microsoft/teams-js": "2.24.0",
       "@microsoft/microsoft-graph-client": "3.0.2"
     },
-    "nodeVersion": "18.19.1"
+    "nodeVersion": "22.15.0"
   }
 }
