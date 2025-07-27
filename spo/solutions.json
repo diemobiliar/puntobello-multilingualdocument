@@ -1,16 +1,51 @@
 {
-    "solutions": [
+    "sites": [
         {
-            "solutionName": "puntobello-multilingualdocument-field",
-            "targets": ["pb_home","pb_content"]
+            "Url": "pb_home",
+            "Title": "Intranet Home",
+            "LCID": 1033,
+            "solutions": [
+                {
+                    "Name": "puntobello-multilingualdocument-field"
+                },
+                {
+                    "Name": "puntobello-multilingualdocument-listview"
+                },
+                {
+                    "Name": "puntobello-multilingualdocument-spwp"
+                }
+            ],
+            "templates": [
+                {
+                    "templateName": "SharedDocuments.xml",
+                    "relativePath": "./spo/assets/lists",
+                    "sortOrder": 100
+                }
+            ]
         },
         {
-            "solutionName": "puntobello-multilingualdocument-listview",
-            "targets": ["pb_home","pb_content"]
-        },
-        {
-            "solutionName": "puntobello-multilingualdocument-spwp",
-            "targets": ["pb_home","pb_content"]
+            "Url": "pb_content",
+            "Title": "Intranet Content Page",
+            "LCID": 1033,
+            "solutions": [
+                {
+                    "Name": "puntobello-multilingualdocument-field"
+                },
+                {
+                    "Name": "puntobello-multilingualdocument-listview"
+                },
+                {
+                    "Name": "puntobello-multilingualdocument-spwp"
+                }
+            ],
+            "templates": [
+                {
+                    "templateName": "SharedDocuments.xml",
+                    "relativePath": "./spo/assets/lists",
+                    "sortOrder": 100
+                }
+            ]
         }
-    ]
+    ],
+    "termStore": []
 }
