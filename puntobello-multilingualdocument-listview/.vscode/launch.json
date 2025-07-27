@@ -25,11 +25,3 @@
     }
   ]
 }
-
-{
-  "configurations": [
-    {
-      "url": "https://{tenantDomain}/_layouts/workbench.aspx"
-    }
-  ]
-}

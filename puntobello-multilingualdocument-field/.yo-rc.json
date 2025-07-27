@@ -2,7 +2,7 @@
   "@microsoft/generator-sharepoint": {
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.18.2",
+    "version": "1.21.0",
     "libraryName": "puntobello-multilingualdocument-field",
     "libraryId": "173fbd57-3306-48da-ac0a-a3703bd5dd1a",
     "packageManager": "npm",
@@ -11,7 +11,7 @@
     "extensionType": "FieldCustomizer",
     "nodeVersion": "18.19.1",
     "sdkVersions": {
-      "@microsoft/teams-js": "2.12.0",
+      "@microsoft/teams-js": "2.24.0",
       "@microsoft/microsoft-graph-client": "3.0.2"
     }
   }
