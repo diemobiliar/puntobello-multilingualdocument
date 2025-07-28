@@ -35,7 +35,7 @@ You can configure all the parameters in the corresponding files located in the `
 
 
 ## Used SharePoint Framework Version 
-![SPFx 1.21.0](https://img.shields.io/badge/SPFx-1.21.0-green.svg)
+![SPFx 1.21.1](https://img.shields.io/badge/SPFx-1.21.1-green.svg)
 ![Node.js v22.15.0](https://img.shields.io/badge/Node.js-%20v22.15.0-green.svg)
 ![SharePoint Online](https://img.shields.io/badge/SharePoint-Online-green.svg)
 ![Teams N/A: Untested with Microsoft Teams](https://img.shields.io/badge/Teams-N%2FA-lightgrey.svg "Untested with Microsoft Teams") 
