@@ -1,6 +1,6 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.21.0",
+    "version": "1.21.1",
     "libraryName": "puntobello-multilingualdocument-spwp",
     "libraryId": "0589bfff-1b18-454b-9880-11e72a12526f",
     "environment": "spo",
