@@ -1,0 +1,1 @@
+{"version":3,"file":"INoDocument.js","sourceRoot":"","sources":["../../../../src/extensions/languageDoc/models/INoDocument.ts"],"names":[],"mappings":"","sourcesContent":["export interface INoDocuments {\n    currentUICultureName: string;\n}"]}

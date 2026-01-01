@@ -19,7 +19,7 @@ import { ILanguageDoc } from './models';
  * The content of the cell is rendered in LanguageDoc.tsx and shows if the document has been associated with another document in a different language.
  */
 export default class LanguageDocFieldCustomizer extends BaseFieldCustomizer<never> {
-  private logger: Logger;
+  private logger!: Logger;
 
   /**
    * Initializes the field customizer. Sets up the logger and initializes
@@ -49,7 +49,7 @@ export default class LanguageDocFieldCustomizer extends BaseFieldCustomizer<neve
   public onRenderCell(event: IFieldCustomizerCellEventParameters): void {
     let itemid = 0, listid = "";
     itemid = event.listItem.getValueByName("ID");
-    listid = this.context.pageContext.list.id.toString();
+    listid = this.context.pageContext.list?.id.toString() ?? "";
 
     const languageDoc: React.ReactElement<ILanguageDoc> =
       React.createElement(LanguageDoc,

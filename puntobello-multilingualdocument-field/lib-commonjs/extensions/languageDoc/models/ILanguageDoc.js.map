@@ -1,0 +1,1 @@
+{"version":3,"file":"ILanguageDoc.js","sourceRoot":"","sources":["../../../../src/extensions/languageDoc/models/ILanguageDoc.ts"],"names":[],"mappings":"","sourcesContent":["export interface ILanguageDoc {\n    listid: string;\n    itemid: number;\n    currentUICultureName: string;\n}\n"]}

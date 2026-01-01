@@ -1,0 +1,1 @@
+{"version":3,"file":"IPageContext.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/models/IPageContext.ts"],"names":[],"mappings":"","sourcesContent":["export interface IPageContext {\n    OData__SPIsTranslation?: boolean;\n    OData__SPTranslationLanguage?: string;\n}"]}

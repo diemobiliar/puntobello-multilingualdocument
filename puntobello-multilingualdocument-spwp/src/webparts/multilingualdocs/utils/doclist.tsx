@@ -69,15 +69,17 @@ export const onRenderOverflowButton = (overflowItems: any[] | undefined, languag
  * @returns {JSX.Element} A JSX element representing the rendered row.
  */
 export const onRenderRow: IDetailsListProps['onRenderRow'] = (props, defaultRender) => {
+  if (!props) return null;
   return (
     <a href={props.item.targetUrl} className={docListLayoutStyles.documentCardLinkListTarget} target="_blank" data-interception="off" rel="noreferrer">
       {defaultRender && defaultRender({
         ...props,
+        columns: props.columns ?? [],
         styles: {
           root: {
             selectors: {
               '&:hover': {
-                'background-color': rootEnv.css['--spfx_theme_color_bright_grey'],
+                'background-color': (rootEnv.css as any)['--spfx_theme_color_bright_grey'],
               },
             },
           },
@@ -95,7 +97,7 @@ export const onRenderRow: IDetailsListProps['onRenderRow'] = (props, defaultRend
  * @returns {string} The key for the item.
  */
 export const getKey = (item: any, index?: number): string => {
-  return index.toString();
+  return (index ?? 0).toString();
 };
 
 /**
@@ -119,7 +121,7 @@ export const getColumns = (language: string): IColumn[] => {
       minWidth: 12,
       maxWidth: 48,
       onRender: (item: IDocData) => {
-        const { iconName, iconColor } = getIconNameByFileType(item.fileType);
+        const { iconName, iconColor } = getIconNameByFileType(item.fileType ?? '');
         return (
           <FontIcon 
            iconName={iconName} 

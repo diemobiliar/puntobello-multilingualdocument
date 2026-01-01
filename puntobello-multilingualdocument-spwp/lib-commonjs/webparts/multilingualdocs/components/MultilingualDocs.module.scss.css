@@ -1,0 +1,6 @@
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+.multilingualdocs body, .multilingualdocs p, .multilingualdocs h1, .multilingualdocs h2, .multilingualdocs h3, .multilingualdocs h4, .multilingualdocs h5, .multilingualdocs h6, .multilingualdocs li, .multilingualdocs a, .multilingualdocs span, .multilingualdocs div {
+  font-family: var(--spfx_font_family) !important;
+}

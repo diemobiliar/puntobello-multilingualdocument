@@ -45,13 +45,13 @@ import { orderedItem } from './components/fieldOrderItem/orderedItem';
 export default class MultilingualDocsWebPart extends BaseClientSideWebPart<IMultilingualDocsWP> {
   
   // Fields for holding various internal states and services
-  private customCollectionFieldType; // Holds the custom collection field type used in property pane
-  private _themeProvider: ThemeProvider; // Theme provider for handling theme changes
+  private customCollectionFieldType!: typeof CustomCollectionFieldType; // Holds the custom collection field type used in property pane
+  private _themeProvider!: ThemeProvider; // Theme provider for handling theme changes
   private _themeVariant: IReadonlyTheme | undefined; // Holds the current theme variant
-  private pageLanguage: ILanguageRepresentation; // Stores the current page language
-  private logger: Logger; // Logger instance for logging information and errors
+  private pageLanguage!: ILanguageRepresentation; // Stores the current page language
+  private logger!: Logger; // Logger instance for logging information and errors
   private initialized = false; // Flag to track whether the web part has been initialized
-  private spo: ISharePointService; // SharePoint service for interacting with SharePoint data
+  private spo!: ISharePointService; // SharePoint service for interacting with SharePoint data
 
   /**
    * Specifies that the indexableContent property is searchable as plain text.
@@ -73,8 +73,8 @@ export default class MultilingualDocsWebPart extends BaseClientSideWebPart<IMult
       this._themeVariant = this._themeProvider.tryGetTheme();
       this._themeProvider.themeChangedEvent.add(this, this._handleThemeChangedEvent);
 
-      const listId = this.context.pageContext.list.id.toString();
-      const listItemId = this.context.pageContext.listItem.id;
+      const listId = this.context.pageContext.list?.id.toString() ?? '';
+      const listItemId = this.context.pageContext.listItem?.id ?? 0;
       const language = this.context.pageContext.web.language;
 
       await super.onInit();
@@ -96,8 +96,8 @@ export default class MultilingualDocsWebPart extends BaseClientSideWebPart<IMult
         this.properties.cardLayout,
         this.properties.collectionData,
         this.displayMode,
-        this.properties.truncateLocale,
-        this.properties.upperCaseLocale
+        this.properties.truncateLocale ?? false,
+        this.properties.upperCaseLocale ?? false
       );
       const element: React.ReactElement = React.createElement(
         AppContextProvider,
@@ -112,6 +112,10 @@ export default class MultilingualDocsWebPart extends BaseClientSideWebPart<IMult
       );
       ReactDom.render(element, this.domElement);
     }
+  }
+
+  protected onDispose(): void {
+    ReactDom.unmountComponentAtNode(this.domElement);
   }
 
   protected get dataVersion(): Version {
@@ -141,7 +145,7 @@ export default class MultilingualDocsWebPart extends BaseClientSideWebPart<IMult
   protected onAfterDeserialize(deserializedObject: any, dataVersion: Version): IMultilingualDocsWP {
     let indexableString = '';
     if (deserializedObject.collectionData) {
-      deserializedObject.collectionData.forEach(obj => {
+      deserializedObject.collectionData.forEach((obj: any) => {
         // Add the document title to the indexable content
         // if other properties are needed, update here
         indexableString += obj.doctitle + '; ';

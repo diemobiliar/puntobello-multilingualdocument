@@ -1,0 +1,1 @@
+{"version":3,"file":"ICustomConfig.js","sourceRoot":"","sources":["../../../../src/extensions/languageConnection/models/ICustomConfig.ts"],"names":[],"mappings":"","sourcesContent":["interface ICustomConfig {\n}\n\nexport default ICustomConfig;"]}

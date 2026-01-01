@@ -9,7 +9,7 @@ export const cardLayoutStyles = mergeStyleSets({
     width: '100%',
   },
   listTitle: {
-    fontSize: rootEnv.css['--spfx_font_size'],
+    fontSize: (rootEnv.css as any)['--spfx_font_size'],
     display: "block",
     marginBottom: 30,
     width: '100%'

@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/components/index.ts"],"names":[],"mappings":";;;AAAA,gEAAsC;AACtC,iEAAuC;AACvC,6DAAmC;AACnC,6DAAmC","sourcesContent":["export * from '../models/IRelatedDoc';\nexport * from '../models/IDoccardInfo';\nexport * from '../models/IDocData';\nexport * from './MultilingualDocs';\n"]}
