@@ -36,10 +36,10 @@ import { IConfirmationDialog } from './models';
  * LanguageConnectionCommandSet class extends BaseListViewCommandSet.
  * It handles the logic for creating and deleting language connections for documents in a SharePoint library.
  */
-export default class LanguageConnectionCommandSet extends BaseListViewCommandSet<{ never }> {
-  private dialogPlaceHolder: HTMLDivElement = null; // Placeholder for the React dialog component
-  private _sp: SPFI = null; // SharePoint Framework interface instance
-  private logger: Logger; // Logger instance for logging information and errors
+export default class LanguageConnectionCommandSet extends BaseListViewCommandSet<Record<string, never>> {
+  private dialogPlaceHolder: HTMLDivElement | null = null; // Placeholder for the React dialog component
+  private _sp: SPFI | null = null; // SharePoint Framework interface instance
+  private logger!: Logger; // Logger instance for logging information and errors
 
   /**
    * Initializes the command set, setting up the logger, PnPJS instance, 
@@ -189,7 +189,7 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
       return;
     }
     
-    const list = this._sp.web.lists.getById(this.context.pageContext.list.id.toString());
+    const list = this._sp!.web.lists.getById(this.context.pageContext.list!.id.toString());
 
     switch (event.itemId) {
       case 'COMMAND_CONN_DELETE':
@@ -202,7 +202,7 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
 
       case 'COMMAND_CONN_CREATE': {
         let guidKey = false;
-        let guidFound = null;
+        let guidFound: string | null = null;
         const fileTypes = new Set();
         let multipleFileTypes = false;
 
@@ -243,7 +243,7 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
 
         // Update all the list items
         await Promise.all(event.selectedRows.map(async (arrayItem) => {
-          if (updateRC == 0) updateRC = await this.updateDocGuid('CREATE', list, arrayItem.getValueByName('ID'), guidFound, guidFound);
+          if (updateRC == 0) updateRC = await this.updateDocGuid('CREATE', list, arrayItem.getValueByName('ID'), guidFound!, guidFound!);
         }));
         this.displayDialog(updateRC === 423 ? 'lock' : 'create');
         break;
@@ -267,7 +267,7 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
       const items = await list.items.filter(`pb_LangCd eq '${languageCode}' and pb_LangConn eq '${langConn}' and ID ne '${id}'`)();
 
       // Check if any of the items have a connection for the selected language
-      if (items.some(item => item.pb_LangConn)) {
+      if (items.some((item: { pb_LangConn?: string }) => item.pb_LangConn)) {
         return true; // Connection already exists for this language
       }
     }
@@ -353,6 +353,17 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
   }
 
   /**
+   * Called when the command set is being disposed.
+   * Cleans up the React component to prevent memory leaks.
+   */
+  @override
+  public onDispose(): void {
+    if (this.dialogPlaceHolder) {
+      ReactDom.unmountComponentAtNode(this.dialogPlaceHolder);
+    }
+  }
+
+  /**
    * Updates the document GUID (language connection) for a given item in the list.
    * @param updateType - The type of update (CREATE or DELETE).
    * @param list - The SharePoint list instance.
@@ -369,11 +380,11 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
       if (updateType == 'DELETE') {
         // Check if we have only one last item with the original guid, if yes => remove the connection
         const filterQueryLangConn = "pb_LangConn eq '" + originalGuid + "'";
-        await list.items.filter(filterQueryLangConn)().then(async (items) => {
+        await list.items.filter(filterQueryLangConn)().then(async (items: { Id: number }[]) => {
           if (items.length == 1) {
             await list.items.getById(items[0].Id).update({
               pb_LangConn: ''
-            }).catch((errorMsg) => {
+            }).catch((errorMsg: unknown) => {
               const errMsgString = JSON.stringify(errorMsg);
               if (errMsgString.indexOf('423') > 0) {
                 retVal = 423;
@@ -382,7 +393,7 @@ export default class LanguageConnectionCommandSet extends BaseListViewCommandSet
           }
         });
       }
-    }).catch((errorMsg) => {
+    }).catch((errorMsg: unknown) => {
       const errMsgString = JSON.stringify(errorMsg);
       if (errMsgString.indexOf('423') > 0) {
         retVal = 423;

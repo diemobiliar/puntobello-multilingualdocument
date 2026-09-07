@@ -14,7 +14,8 @@ import { SPFI } from "@pnp/sp";
  */
 export const getIconNameByFileName = (fileName: string): string => {
   const fileExtensionPattern = /\.([0-9a-z]+)(?=[?#])|(\.)(?:[\w]+)$/gmi;
-  const matchExt = fileName.match(fileExtensionPattern)[0];
+  const matches = fileName.match(fileExtensionPattern);
+  const matchExt = matches ? matches[0] : '';
   
   switch (matchExt.toLowerCase()) {
     case '.doc':

@@ -6,9 +6,9 @@ import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
 
-let _sp: SPFI = null;
+let _sp: SPFI | null = null;
 
-export const getSP = (context?: ExtensionContext): SPFI => {
+export const getSP = (context?: ExtensionContext): SPFI | null => {
   if (context != null) {
     _sp = spfi().using(SPFx(context));
   }

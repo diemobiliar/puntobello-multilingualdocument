@@ -1,0 +1,1 @@
+{"version":3,"file":"IDocumentList.js","sourceRoot":"","sources":["../../../../src/extensions/languageDoc/models/IDocumentList.ts"],"names":[],"mappings":"","sourcesContent":["export interface IDocumentList {\n  docItems: any[];\n  currentUICultureName: string;\n}"]}

@@ -1,6 +1,6 @@
 {
   "@microsoft/generator-sharepoint": {
-    "version": "1.21.1",
+    "version": "1.22.1",
     "libraryName": "puntobello-multilingualdocument-listview",
     "libraryId": "0ae581c4-6765-4fb6-a9b6-2f2c49e06d09",
     "environment": "spo",
@@ -14,5 +14,6 @@
       "@microsoft/microsoft-graph-client": "3.0.2"
     },
     "nodeVersion": "22.15.0"
-  }
+  },
+  "useGulp": false
 }

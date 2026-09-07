@@ -27,9 +27,9 @@ export interface ISharePointService {
 export default class SharePointService implements ISharePointService {
     public static readonly serviceKey: ServiceKey<ISharePointService> =
         ServiceKey.create<ISharePointService>('SPFx:SharePointService', SharePointService);
-    private pageContext: PageContext;
+    private pageContext!: PageContext;
     private logger: Logger;
-    public sp: SPFI;
+    public sp!: SPFI;
 
     constructor(serviceScope: ServiceScope) {
         this.logger = Logger.getInstance();
@@ -48,7 +48,7 @@ export default class SharePointService implements ISharePointService {
         const fieldNames = fields.map(field => field.InternalName);
         const allFieldsExist = requiredFields.every(field => fieldNames.includes(field));
         if (!allFieldsExist) {
-            return null;
+            return null as unknown as IPageContext;
         } else {
             const context = await this.sp.web.lists.getById(listId)
                 .items
@@ -78,7 +78,7 @@ export default class SharePointService implements ISharePointService {
             // Not running in a multilingual setup
             // Get language from web
             languageData.lcid = defaultLanguage;
-            languageData.Language = lcid.from(defaultLanguage);
+            languageData.Language = lcid.from(defaultLanguage) ?? '';
             languageData.LanguageLC = languageData.Language.toLowerCase();
             languageData.LanguageDashed = languageData.Language.replace('_', '-');
             languageData.LanguageDashedLC = languageData.LanguageLC.replace('_', '-');
@@ -86,7 +86,7 @@ export default class SharePointService implements ISharePointService {
         }
         // Page is a translation
         // Get language from page property
-        languageData.lcid = lcid.to(pageContext.OData__SPTranslationLanguage);
+        languageData.lcid = lcid.to(pageContext.OData__SPTranslationLanguage) ?? 0;
         languageData.Language = pageContext.OData__SPTranslationLanguage;
         languageData.LanguageLC = languageData.Language.toLowerCase();
         languageData.LanguageDashed = languageData.Language.replace('_', '-');

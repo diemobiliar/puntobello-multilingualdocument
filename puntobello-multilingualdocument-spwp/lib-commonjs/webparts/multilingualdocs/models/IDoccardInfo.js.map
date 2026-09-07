@@ -1,0 +1,1 @@
+{"version":3,"file":"IDoccardInfo.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/models/IDoccardInfo.ts"],"names":[],"mappings":"","sourcesContent":["export interface IDoccardInfo {\n  filePicker: any;\n  doctitle: string;\n  docurl: string;\n  docurlhidden: string;\n  docweburl:string;\n}\n\n\n\n"]}

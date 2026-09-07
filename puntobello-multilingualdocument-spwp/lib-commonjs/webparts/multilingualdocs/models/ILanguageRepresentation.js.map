@@ -1,0 +1,1 @@
+{"version":3,"file":"ILanguageRepresentation.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/models/ILanguageRepresentation.ts"],"names":[],"mappings":"","sourcesContent":["export interface ILanguageRepresentation {\n    lcid: number;\n    Language: string;\n    LanguageLC: string;\n    LanguageDashed: string;\n    LanguageDashedLC: string;\n}"]}

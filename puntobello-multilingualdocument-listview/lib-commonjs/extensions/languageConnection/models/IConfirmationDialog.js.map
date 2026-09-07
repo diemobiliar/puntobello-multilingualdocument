@@ -1,0 +1,1 @@
+{"version":3,"file":"IConfirmationDialog.js","sourceRoot":"","sources":["../../../../src/extensions/languageConnection/models/IConfirmationDialog.ts"],"names":[],"mappings":"","sourcesContent":["export interface IConfirmationDialog {\n    onClose: () => void;\n    isOpen: boolean;\n    Title: string;\n    Message: string;\n    OkBtnLabel: string;\n}\n"]}

@@ -8,8 +8,7 @@
       "fieldCustomizers": {
         "pb_LangConn": {
           "id": "704835cc-32d6-4b3c-b6bb-95367290bbf6",
-          "properties": {
-          }
+          "properties": {}
         }
       }
     },
@@ -18,10 +17,10 @@
       "fieldCustomizers": {
         "pb_LangConn": {
           "id": "704835cc-32d6-4b3c-b6bb-95367290bbf6",
-          "properties": {
-          }
+          "properties": {}
         }
       }
     }
-  }
+  },
+  "initialPage": "https://{tenantDomain}/_layouts/workbench.aspx"
 }

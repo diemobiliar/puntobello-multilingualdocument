@@ -30,7 +30,7 @@ export default function LanguageDoc(props: ILanguageDoc) {
   const [showProgress, setShowProgress] = React.useState(true);
   
   // State to store the fetched document items
-  const [docItems, setDocItems] = React.useState([]);
+  const [docItems, setDocItems] = React.useState<any[]>([]);
   
   // Initialize the SharePoint Framework (SPFx) context
   const _sp: SPFI = getSP();

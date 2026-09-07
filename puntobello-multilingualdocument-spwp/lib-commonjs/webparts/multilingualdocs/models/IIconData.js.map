@@ -1,0 +1,1 @@
+{"version":3,"file":"IIconData.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/models/IIconData.ts"],"names":[],"mappings":"","sourcesContent":["export interface IIconData {\n    iconName: string;\n    iconColor: string;\n  }\n  "]}

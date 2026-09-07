@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { IDocData, IIconData, IRelatedDoc } from '../models';
 
 // Utility Libraries
-import * as moment from 'moment';
+import moment from 'moment';
 
 // Fluent UI and Styling
 import { getTheme } from '@fluentui/react/lib/Styling';
@@ -23,7 +23,9 @@ import { getFileExtension, getFormattedLocale, getIconNameByFileType, getRootEnv
  * 
  * @returns {Array<IDocData>} - An array of processed document data ready to be rendered.
  */
-export const useLoadCardData = (collectionData, spo, truncateLocale, upperCaseLocale) => {
+import { ISharePointService } from '../services/SharePointService';
+
+export const useLoadCardData = (collectionData: any[], spo: ISharePointService, truncateLocale: boolean, upperCaseLocale: boolean) => {
     const [docData, setDocData] = useState<IDocData[]>([]); // State to hold document data
     const currDocData: IDocData[] = []; // Temporary array to accumulate document data
 
@@ -47,10 +49,10 @@ export const useLoadCardData = (collectionData, spo, truncateLocale, upperCaseLo
     const loadCardData = async () => {
         currDocData.length = 0; // Reset the temporary array
 
-        await Promise.all(collectionData.map(async (doccard, idx) => {
+        await Promise.all(collectionData.map(async (doccard: any, idx: number) => {
             const theme = getTheme(); // Get the current theme for styling
             const { palette, fonts } = theme;
-            const previewCard = { previewImages: [], styles: { previewIcon: { backgroundColor: getRootEnv().css['--spfx_color_grey_brightness_bright'] } } };
+            const previewCard: { previewImages: any[]; styles: { previewIcon: { backgroundColor: string | undefined } } } = { previewImages: [], styles: { previewIcon: { backgroundColor: getRootEnv().css['--spfx_color_grey_brightness_bright'] } } };
             const relatedDocuments: IRelatedDoc[] = []; // Array to hold related documents
             let currLinkingUri: string;
             let currFileType = '';
@@ -117,7 +119,7 @@ export const useLoadCardData = (collectionData, spo, truncateLocale, upperCaseLo
             const otherItems = await spo.getFilteredExpandedItems(doccard.docweburl, guidFound[0], filterQuery);
 
             // Process each related document and add to the relatedDocuments array
-            otherItems.forEach(otherItem => {
+            otherItems.forEach((otherItem: any) => {
                 let currOtherItemUri = '';
                 if (currFileType === 'pdf') {
                     currOtherItemUri = replaceActionInUri(tenantFileUrl + otherItem['File']['ServerRelativeUrl']);
@@ -155,7 +157,7 @@ export const useLoadCardData = (collectionData, spo, truncateLocale, upperCaseLo
         }));
 
         // Sort the document data by sort order and update the state
-        currDocData.sort((a, b) => (a.sortOrder > b.sortOrder) ? 1 : ((b.sortOrder > a.sortOrder) ? -1 : 0));
+        currDocData.sort((a, b) => ((a.sortOrder ?? 0) > (b.sortOrder ?? 0)) ? 1 : (((b.sortOrder ?? 0) > (a.sortOrder ?? 0)) ? -1 : 0));
         setDocData([...currDocData]); // Update the state with the sorted data
     };
 

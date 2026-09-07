@@ -1,0 +1,1 @@
+{"version":3,"file":"IRelatedDoc.js","sourceRoot":"","sources":["../../../../src/webparts/multilingualdocs/models/IRelatedDoc.ts"],"names":[],"mappings":"","sourcesContent":["export interface IRelatedDoc {\n    key: string;\n    langCd: string;\n    name: string;\n    Url: string;\n    target: string;\n    tooltip: string;\n  }  "]}

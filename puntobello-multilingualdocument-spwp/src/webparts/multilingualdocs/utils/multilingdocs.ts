@@ -42,20 +42,20 @@ export const getIconNameByFileType = (fileType: string): IIconData => {
   switch (fileType.toLowerCase()) {
     case 'doc':
     case 'docx':
-      return { iconName: 'WordDocument', iconColor: rootEnv.css['--spfx_color_doc_icon'] };
+      return { iconName: 'WordDocument', iconColor: rootEnv.css['--spfx_color_doc_icon'] ?? '' };
     case 'xls':
     case 'xlsx':
     case 'xlsm':
-      return { iconName: 'ExcelDocument', iconColor: rootEnv.css['--spfx_color_xls_icon'] };
+      return { iconName: 'ExcelDocument', iconColor: rootEnv.css['--spfx_color_xls_icon'] ?? '' };
     case 'ppt':
     case 'pptx':
-      return { iconName: 'PowerPointDocument', iconColor: rootEnv.css['--spfx_color_ppt_icon'] };
+      return { iconName: 'PowerPointDocument', iconColor: rootEnv.css['--spfx_color_ppt_icon'] ?? '' };
     case 'one':
-      return { iconName: 'OneNoteLogoInverse', iconColor: rootEnv.css['--spfx_color_one_icon'] };
+      return { iconName: 'OneNoteLogoInverse', iconColor: rootEnv.css['--spfx_color_one_icon'] ?? '' };
     case 'pdf':
-      return { iconName: 'PDF', iconColor: rootEnv.css['--spfx_color_pdf_icon'] };
+      return { iconName: 'PDF', iconColor: rootEnv.css['--spfx_color_pdf_icon'] ?? '' };
     default:
-      return { iconName: 'StatusCircleQuestionMark', iconColor: rootEnv.css['--spfx_color_primary'] };
+      return { iconName: 'StatusCircleQuestionMark', iconColor: rootEnv.css['--spfx_color_primary'] ?? '' };
   }
 };
 

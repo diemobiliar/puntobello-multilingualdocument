@@ -1,0 +1,49 @@
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at http://aka.ms/fabric-assets-license
+*/
+.LanguageDoc {
+  font-family: var(--spfx_font_family) !important;
+}
+.LanguageDoc .cell {
+  display: "inline-block";
+  width: 100%;
+  font-size: var(--spfx_font_size_generic);
+}
+.LanguageDoc .loader {
+  margin: 0px auto;
+  display: inline-flex;
+  position: absolute;
+  left: 40px;
+  font-size: var(--spfx_font_size_generic);
+}
+.LanguageDoc .totalDiv {
+  margin-bottom: 8px;
+  font-size: var(--spfx_font_size_title);
+}
+.LanguageDoc .link {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: var(--spfx_color_primary);
+  text-decoration: underline;
+  font-size: var(--spfx_font_size_generic);
+  cursor: pointer;
+}
+.LanguageDoc .link:hover {
+  color: var(--spfx_color_primary);
+  text-decoration: underline;
+  filter: brightness(var(--spfx_color_primary_brightness_dark));
+}
+.LanguageDoc .spinner {
+  margin: 0 auto;
+  display: inline-flex;
+  position: absolute;
+  left: 40px;
+}
+.LanguageDoc .noDocContainer {
+  display: flex;
+  align-items: center;
+}
+.LanguageDoc .noDoc {
+  font-size: var(--spfx_font_size_title) !important;
+  margin-right: 8px;
+}

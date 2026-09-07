@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../../../src/webparts/multilingualdocs/components/doclist/index.ts"],"names":[],"mappings":";;;AAAA,qDAA2B;AAC3B,oDAA0B","sourcesContent":["export * from './IDocList';\nexport * from './Doclist';\n"]}

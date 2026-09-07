@@ -28,7 +28,7 @@ import { cardLayoutStyles } from '../../styles/doccard';
  * @param item - The item to render, containing the link and name of the related document.
  * @returns A JSX.Element representing the link to the related document.
  */
-const onRenderItem = (item): JSX.Element => {
+const onRenderItem = (item: any): JSX.Element => {
   return (
     <a href={item.link} className={cardLayoutStyles.documentCardLinkListItem} role="listitem" rel="noreferrer" target="_blank" data-interception="off">
       {item.name}
